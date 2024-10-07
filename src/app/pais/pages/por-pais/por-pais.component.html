@@ -1,0 +1,34 @@
+<h2>Por Pais</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+      <app-pais-input
+      (debounce)="sugerencias($event)"
+      (enter)="buscar($event)"
+      [busqueda]="placeholder"
+      ></app-pais-input>
+    </div>
+</div>
+
+<div class="row">
+    <ul class="list-group">
+        @for (pais of paisesSugerencia; track $index) {
+        <li class="list-group-item list-group-item-action"(click)="buscar(pais.name.common)" >
+           {{pais.name.common}}
+        </li>
+    }
+    </ul>
+</div>
+
+<hr>
+
+<div class="alert alert-danger" *ngIf="alert">
+    No se encontro nada con el termino {{termino}}
+</div>
+
+<div class="row" >
+    <div class="col">
+       <app-pais-tabla [paises]="paises"></app-pais-tabla>
+    </div>
+</div>

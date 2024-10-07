@@ -1,0 +1,69 @@
+<div class="alert alert-info" *ngIf="!pais" >
+    Espere por favor....
+</div>
+
+
+<ng-container *ngIf="pais">
+
+    <div class="row" >
+        <div class="col-12">
+            <h1>pais: <small>{{pais[0].name.common}}</small></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <h3>Bandera</h3>
+            <img [src]="pais[0].flags.svg" alt="" class="small-flag">
+        </div>
+        <div class="col">
+            <h3>Informacion</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Poblacion  </strong>{{pais[0].population | number}}
+                </li>
+    
+            </ul>
+        </div>
+    </div>
+    <h3>Traducciones</h3>
+    <div class="row">
+        <div class="col">
+            <span class="badge bg-primari">{{pais[0].translations.ara}}</span>
+            <span class="badge bg-primari">{{pais[0].translations.bre}}</span>
+            <span class="badge bg-primari">{{pais[0].translations.ces}}</span>
+            <span class="badge bg-primari">{{pais[0].translations.cym}}</span>
+            <span class="badge bg-primari">{{pais[0].translations.deu}}</span>
+            <span class="badge bg-primari">{{pais[0].translations.est}}</span>
+            <span class="badge bg-primari">{{pais[0].translations.fin}}</span>
+            <span class="badge bg-primari">{{pais[0].translations.fra}}</span>
+            <span class="badge bg-primari">{{pais[0].translations.hrv}}</span>
+        </div>
+    </div>
+
+</ng-container>
+
+<!-- @if (!pais) {
+    <div class="alert alert-info"  >
+        Espere por favor....
+    </div>
+}@else {
+    <div class="row">
+        <div class="col-12">
+            <h1>pais: <small>{{pais.name.common}}</small></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <h3>Bandera</h3>
+            <img [src]="pais.flag" alt="">
+        </div>
+        <div class="col">
+            <h3>Informacion</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Poblacion</strong>{{pais.population}}
+                </li>
+            </ul>
+        </div>
+    </div>
+} -->

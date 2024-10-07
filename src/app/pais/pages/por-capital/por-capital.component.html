@@ -1,0 +1,20 @@
+<h2>Por Capital</h2>
+<hr>
+<div class="row">
+    <div class="col">
+      <app-pais-input    
+      (enter)="buscar($event)"
+      [busqueda]="placeholder"
+      ></app-pais-input>
+    </div>
+</div>
+<hr>
+<div class="alert alert-danger" *ngIf="alert">
+    No se encontro nada con el termino {{termino}}
+</div>
+
+<div class="row" >
+    <div class="col">
+       <app-capital-tabla [capital]="capital" ></app-capital-tabla>
+    </div>
+</div>
